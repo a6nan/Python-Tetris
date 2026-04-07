@@ -15,27 +15,27 @@ class Text:
         return n_sin(time * 0.5), n_sin(time * 0.2), n_sin(time * 0.9)
 
     def draw(self):
-        self.font.render_to(self.app.screen, (WIN_W * 0.595, WIN_H * 0.02),
+        self.font.render_to(self.app.screen, (WIN_W * 0.650, WIN_H * 0.02),
                             text='PYTRIS', fgcolor=self.get_color(),
                             size=TILE_SIZE * 1.5)
-        self.font.render_to(self.app.screen, (WIN_W * 0.65, WIN_H * 0.12),
+        self.font.render_to(self.app.screen, (WIN_W * 0.65, WIN_H * 0.08),
                             text='next', fgcolor='orange',
                             size=TILE_SIZE * 1.4)
-        self.font.render_to(self.app.screen, (WIN_W * 0.65, WIN_H * 0.42),
+        self.font.render_to(self.app.screen, (WIN_W * 0.65, WIN_H * 0.36),
                             text='hold', fgcolor='orange',
                             size=TILE_SIZE * 1.4)
 
-        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.57),
+        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.68),
                             text='level', fgcolor='orange',
                             size=TILE_SIZE * 1.4)
-        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.65),
+        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.75),
                             text=f'{self.app.tetris.level}', fgcolor='white',
                             size=TILE_SIZE * 1.8)
 
-        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.75),
+        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.85),
                             text='score', fgcolor='orange',
                             size=TILE_SIZE * 1.4)
-        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.85),
+        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.92),
                             text=f'{self.app.tetris.score}', fgcolor='white',
                             size=TILE_SIZE * 1.8)
 
@@ -72,7 +72,7 @@ class Tetris:
             self.score += self.points_per_lines[self.full_lines]
             self.full_lines = 0
 
-            new_level = (self.score // 1000) + 1
+            new_level = (self.score // 500) + 1
             if new_level > self.level:
                 self.level = new_level
                 new_speed = max(40, ANIM_TIME_INTERVAL - (self.level - 1) * 15)

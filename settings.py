@@ -24,7 +24,7 @@ WIN_RES = WIN_W, WIN_H = FIELD_RES[0] * FIELD_SCALE_W, FIELD_RES[1] * FIELD_SCAL
 
 INIT_POS_OFFSET = vec(FIELD_W // 2 - 1, 0)
 NEXT_POS_OFFSET = vec(FIELD_W * 1.3, FIELD_H * 0.25)
-HOLD_POS_OFFSET = vec(FIELD_W * 1.3, FIELD_H * 0.55)
+HOLD_POS_OFFSET = vec(FIELD_W * 1.3, FIELD_H * 0.52)
 MOVE_DIRECTIONS = {'left': vec(-1, 0), 'right': vec(1, 0), 'down': vec(0, 1)}
 
 TETROMINOES = {

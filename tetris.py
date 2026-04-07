@@ -52,7 +52,7 @@ class Tetris:
         self.speed_up = False
         self.game_over = False
 
-        btn_w, btn_h = 220, 60
+        btn_w, btn_h = 250, 60
         center_x = WIN_W // 2 - btn_w // 2
         self.btn_restart = pg.Rect(center_x, WIN_H // 2, btn_w, btn_h)
         self.btn_exit = pg.Rect(center_x, WIN_H // 2 + 80, btn_w, btn_h)
@@ -131,19 +131,19 @@ class Tetris:
         font = self.app.text.font
 
         font.render_to(self.app.screen, (WIN_W // 2 - 170, WIN_H // 2 - 120),
-                       text='GAME OVER', fgcolor='red', size=TILE_SIZE * 1.5)
+                       text='GAME OVER', fgcolor='red', size=TILE_SIZE * 2)
 
         mouse_pos = pg.mouse.get_pos()
 
         color_restart = 'yellow' if self.btn_restart.collidepoint(mouse_pos) else 'white'
         pg.draw.rect(self.app.screen, color_restart, self.btn_restart, border_radius=10)
-        font.render_to(self.app.screen, (self.btn_restart.x + 35, self.btn_restart.y + 20),
-                       text='RESTART', fgcolor='black', size=TILE_SIZE * 0.6)
+        font.render_to(self.app.screen, (self.btn_restart.x + 60, self.btn_restart.y + 20),
+                       text='RESTART', fgcolor='black', size=TILE_SIZE * 0.8)
 
         color_exit = 'yellow' if self.btn_exit.collidepoint(mouse_pos) else 'white'
         pg.draw.rect(self.app.screen, color_exit, self.btn_exit, border_radius=10)
         font.render_to(self.app.screen, (self.btn_exit.x + 75, self.btn_exit.y + 20),
-                       text='EXIT', fgcolor='black', size=TILE_SIZE * 0.6)
+                       text='EXIT', fgcolor='black', size=TILE_SIZE * 0.8)
 
     def check_tetromino_landing(self):
         if self.tetromino.landing:
